@@ -16,12 +16,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import kumpul.akses_merakv2.R;
 import kumpul.akses_merakv2.SubActivity;
+import kumpul.akses_merakv2.TriggerCheck;
 import kumpul.akses_merakv2.adapter.MembersAdapter;
 import kumpul.akses_merakv2.databaseobject.SpaceMember;
 
@@ -30,9 +33,9 @@ import kumpul.akses_merakv2.databaseobject.SpaceMember;
  */
 
 public class FireBaseInstaller extends SubActivity {
-    private com.google.firebase.database.FirebaseDatabase FirebaseDatabase;
-    private com.google.firebase.database.DatabaseReference DatabaseReference;
-    private com.google.firebase.database.ChildEventListener ChildEventListener;
+    private FirebaseDatabase FirebaseDatabase;
+    private DatabaseReference DatabaseReference;
+    private ChildEventListener ChildEventListener;
     private MembersAdapter membersAdapter;
     private Context context;
 
@@ -87,5 +90,14 @@ public class FireBaseInstaller extends SubActivity {
             };
             DatabaseReference.addChildEventListener(ChildEventListener);
         }
+    }
+
+
+    public void onClickTriggerCheckBtn(View v) {
+        DatabaseReference = FirebaseDatabase.getReference().child("spaceMemberVisits").child("nx@0295922636");
+        String spaceID = "nx@0295922636";
+        String memberID = "nx@0295790783";
+        TriggerCheck triggerCheck = new TriggerCheck(spaceID, memberID);
+        DatabaseReference.child(memberID).push().setValue(triggerCheck);
     }
 }

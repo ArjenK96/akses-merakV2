@@ -7,32 +7,44 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="kumpul.akses_merakv2.MainActivity">
 
+<!-- Deze kan weg als het goed is -->
+    <!--<Button-->
+        <!--android:text="Button"-->
+        <!--android:width="200dp"-->
+        <!--android:height="200dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/btnStart"-->
+        <!--android:onClick="onClickStartBtn"-->
+        <!--android:layout_marginTop="32dp"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
-    <Button
-        android:text="Button"
-        android:width="200dp"
-        android:height="200dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnStart"
-        android:onClick="onClickStartBtn"
-        android:layout_marginTop="32dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+    <!--<Button-->
+        <!--android:text="Check in/out"-->
+        <!--android:width="200dp"-->
+        <!--android:height="200dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/btnTriggerCheck"-->
+        <!--android:onClick="onClickTriggerCheckBtn"-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:layout_below="@+id/btnStart"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
-    <Button
-        android:text="Check in/out"
-        android:width="200dp"
-        android:height="200dp"
-        android:layout_width="wrap_content"
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
+
+    <android.support.design.widget.TabLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tab_layout"
         android:layout_height="wrap_content"
-        android:id="@+id/btnTriggerCheck"
-        android:onClick="onClickTriggerCheckBtn"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/btnStart"
-        android:layout_centerHorizontal="true" />
-    <ListView
+        android:layout_width="match_parent">
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/memberListView"/>
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tab_layout">
+    </android.support.v4.view.ViewPager>
 </RelativeLayout>
