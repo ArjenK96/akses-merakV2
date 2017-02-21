@@ -1,4 +1,4 @@
-package kumpul.akses_merakv2;
+package kumpul.akses_merakv2.databaseobject;
 
 import java.security.Timestamp;
 

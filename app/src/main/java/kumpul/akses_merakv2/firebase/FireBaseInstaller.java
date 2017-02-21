@@ -1,18 +1,10 @@
 package kumpul.akses_merakv2.firebase;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.firebase.ui.auth.AuthUI;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,11 +12,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import kumpul.akses_merakv2.R;
-import kumpul.akses_merakv2.SubActivity;
-import kumpul.akses_merakv2.TriggerCheck;
+import kumpul.akses_merakv2.databaseobject.TriggerCheck;
 import kumpul.akses_merakv2.adapter.MembersAdapter;
 import kumpul.akses_merakv2.databaseobject.SpaceMember;
 
@@ -32,27 +22,18 @@ import kumpul.akses_merakv2.databaseobject.SpaceMember;
  * Created by Arjen on 20-2-2017.
  */
 
-public class FireBaseInstaller extends SubActivity {
+public class FireBaseInstaller {
     private FirebaseDatabase FirebaseDatabase;
     private DatabaseReference DatabaseReference;
     private ChildEventListener ChildEventListener;
     private MembersAdapter membersAdapter;
-    private Context context;
 
-    public void create(Context context){
-        this.context = context;
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle   savedInstanceState) {
-        View view =  inflater.inflate(R.layout.activity_main, container, false);
+    public FireBaseInstaller(Context context, ListView memberListView){
         FirebaseDatabase = FirebaseDatabase.getInstance();
         membersAdapter = new MembersAdapter(context, R.layout.memberlist_item, new ArrayList<SpaceMember>());
 
-        ListView memberListView = (ListView) view.findViewById(R.id.memberListView);
         memberListView.setAdapter(membersAdapter);
         initializeView();
-        return view;
     }
 
     private void initializeView(){

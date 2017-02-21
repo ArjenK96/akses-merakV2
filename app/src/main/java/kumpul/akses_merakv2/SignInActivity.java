@@ -1,30 +1,14 @@
 package kumpul.akses_merakv2;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-
-import kumpul.akses_merakv2.MainActivity;
-import kumpul.akses_merakv2.R;
-import kumpul.akses_merakv2.adapter.MembersAdapter;
-import kumpul.akses_merakv2.databaseobject.SpaceMember;
 
 /**
  * Created by Arjen on 21-2-2017.
