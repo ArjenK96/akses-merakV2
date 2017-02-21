@@ -1,7 +1,5 @@
 package kumpul.akses_merakv2.databaseobject;
 
-import java.security.Timestamp;
-
 /**
  * Created by ErwinKok on 21-02-17.
  */
